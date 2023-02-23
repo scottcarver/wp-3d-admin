@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { Canvas } from '@react-three/fiber'
 import Experience from './Experience.jsx'
 // import Trivia from './Trivia.jsx'
-const root = ReactDOM.createRoot(document.querySelector('#wpwrap'))
+const root = ReactDOM.createRoot(document.querySelector('#wpbody'))
 
 root.render(
     <Canvas
