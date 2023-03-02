@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Text, Html, ContactShadows, PresentationControls, Float, Environment, useGLTF, Sparkles, Stars } from '@react-three/drei'
+import { Text, Html, ContactShadows, PresentationControls, Float, Environment, useGLTF, Sparkles, Stars, RoundedBox } from '@react-three/drei'
 
 export default function Experience()
 {
@@ -11,13 +11,21 @@ export default function Experience()
     // }, [size, amount]);
 
     return <>
-
-        <color args={ [ '#241a1a' ] } attach="background" />
+           <RoundedBox
+                    // ref={ref}
+                    // args={[25, 25, 25]}
+                    args={[1, 1 , 1]}
+                    position={ [ 1.25, -1.35, 0 ] }
+                    rotation-y={ 1.13 }
+                >
+                    <meshPhongMaterial color="red" opacity={0.2} />
+                </RoundedBox>
+        <color args={ [ '#2c3338' ] } attach="background" />
      
         <Environment preset="city" />
-       
+  
 
-
+{/* 
         <PresentationControls
             global
             rotation={ [ 0.13, 0.1, 0 ] }
@@ -26,11 +34,21 @@ export default function Experience()
             config={ { mass: 2, tension: 400 } }
             snap={ { mass: 4, tension: 100 } }
         >
-                
+                 */}
 
-            <Float rotationIntensity={ 0.4 } >  
-                <Stars radius={100} depth={20} count={5000} factor={4} saturation={0} speed={0} />
-          
+            <Float rotationIntensity={ 0.05 } >  
+                <Stars color="#000000" radius={100} depth={30} count={5000} factor={4} saturation={1} speed={0} />
+
+                <RoundedBox
+                    // ref={ref}
+                    // args={[25, 25, 25]}
+                    args={[1, 1 , 1]}
+                    position={ [ -1, -1.35, 0 ] }
+                >
+                    <meshNormalMaterial />
+                </RoundedBox>
+
+     
 
                 <rectAreaLight
                     width={ 2.5 }
@@ -43,7 +61,8 @@ export default function Experience()
 
                 <primitive
                     object={ computer.scene }
-                    position-y={ - 1.2 }
+                    position-y={ - 1 }
+                    scale={.6}
                     // rotation-x={ 0.13 }
                 >
                     <Html
@@ -57,27 +76,29 @@ export default function Experience()
                     </Html>
                 </primitive>
 
-
+    
                 <Text
-                    // font="./bangers-v20-latin-regular.woff"
-                    font="./figtree-v2-latin/figtree-v2-latin-800.woff"
+                    font="./bangers-v20-latin-regular.woff"
+                    // font="./figtree-v2-latin/figtree-v2-latin-800.woff"
                     fontSize={ .25 }
-                    position={ [ 2, 0.75, 0.75 ] }
+                    position={ [ 1, 0.25, 1 ] }
                     rotation-y={ - 1.25 }
-                    maxWidth={ 2 }
+                    rotation-x={ - 0.25 }
+                    // rotation-z={ - 0 }
+                    maxWidth={ 4 }
                 >
-                    Welcome Home
+                   Running WordPress 6.2
                 </Text>
             </Float>
 
-            <Sparkles size="200" color="yellow" opacity="1" scale="2" speed=".08" count="200" position={ [ 2, 0.56,  1 ] }/>
-
-        </PresentationControls>
+            {/* <Sparkles size="200" color="yellow" opacity="1" scale="2" speed=".08" count="200" position={ [ 2, 0.56,  1 ] }/> */}
+{/* 
+        </PresentationControls> */}
 
         <ContactShadows
-            position-y={ - 1.4 }
-            opacity={ 0.8 }
-            scale={ 4 }
+            // position-y={ - 0.4 }
+            opacity={ 0.4 }
+            scale={ 2 }
             blur={ 4.4 }
         />
 

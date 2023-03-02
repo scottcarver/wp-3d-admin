@@ -59,9 +59,9 @@ if($site_isdashboard){
 
 
 function my_custom_js() {
-    $jsbuild = 'index-bd37a103.js';
-    $cssbuild = 'index-ce592f20.css';
-    echo '<script type="module" crossorigin  type="text/javascript" src="'.plugin_dir_url( __FILE__ ) . '/dist/assets/'.$jsbuild.'"></script>';
+    $jsbuild = 'index.js'; //'index-64924c4a.js';
+    $cssbuild = 'index.css'; //'index-3aea7e8e.css'; // 
+    echo '<script type="module" crossorigin type="text/javascript" src="'.plugin_dir_url( __FILE__ ) . '/dist/assets/'.$jsbuild.'"></script>';
     echo '<link rel="stylesheet" href="'.plugin_dir_url( __FILE__ ) . '/dist/assets/'.$cssbuild.'">';
 }
 
